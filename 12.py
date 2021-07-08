@@ -30,7 +30,13 @@ print(child_1.contents, "<--children of 1 st child")  # the children of <title>
 s_con = soup.contents
 # print(s_con) # the whole document
 print(soup.contents[1].name,"<--1 st child of the soup")  # html
+# generator of children of a tag
 
+# print(soup.children) will give a generator object of direct children
+print('\n','\n')
+print(list(soup.children))
+print(len(list(soup.children)))
+# contents gives a list while .children gives a generator to iterate over 
 # a string can't have any children
 text = soup.body.p.string
-print(text.contents)  # 'NavigableString' object has no attribute 'contents'
+# print(text.contents)  # 'NavigableString' object has no attribute 'contents'
